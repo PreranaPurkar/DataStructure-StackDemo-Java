@@ -1,5 +1,6 @@
 package com.technospace.stackdemo;
 
+import java.awt.Choice;
 import java.util.Scanner;
 
 public class StackDemo {
@@ -39,15 +40,34 @@ public class StackDemo {
 	}
 	public static void main(String[] args) {
 		StackDemo stackDemo = new StackDemo();
-		stackDemo.push();
-		stackDemo.push();
-		stackDemo.push();
-		stackDemo.push();
-		stackDemo.display();
-		stackDemo.pop();
-		stackDemo.display();
-		
-
+		/***
+		 * stackDemo.push();
+		 * stackDemo.push();
+		 *stackDemo.push();
+		 *stackDemo.push();
+		 *stackDemo.display();
+		 *stackDemo.pop();
+		 *stackDemo.display();
+		*/
+		Scanner scanner=new Scanner(System.in);
+		int choice;
+		do{
+			System.err.println("**** STACK OPERATIONS ****");
+			System.out.println("1. PUSH \n2. POP \n3. DISPLAY \n4. EXIT");
+			System.out.println("Enter the Operation Number:");
+			choice = scanner.nextInt();
+			switch(choice){
+				case 1:
+					stackDemo.push();
+				break;
+				case 2:
+					stackDemo.pop();
+				break;
+				case 3:
+					stackDemo.display();
+				break;
+			}
+		}while(choice!=4);
 	}
 
 }
